@@ -16,5 +16,10 @@ namespace JPKvalidator
         {
             InitializeComponent();
         }
+
+        private void zamknijToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
