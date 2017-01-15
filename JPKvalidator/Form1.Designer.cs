@@ -60,6 +60,7 @@
             this.otwóżToolStripMenuItem.Name = "otwóżToolStripMenuItem";
             this.otwóżToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
             this.otwóżToolStripMenuItem.Text = "Otwórz plik JPK";
+            this.otwóżToolStripMenuItem.Click += new System.EventHandler(this.otwóżToolStripMenuItem_Click);
             // 
             // zamknijToolStripMenuItem
             // 
