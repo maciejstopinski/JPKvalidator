@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml;
 
 namespace JPKvalidator
 {
@@ -16,6 +17,7 @@ namespace JPKvalidator
         {
             InitializeComponent();
         }
+        private List<JPK> listaJPK;
         private void OpenFile()
         {
             OpenFileDialog openMyFile = new OpenFileDialog();
@@ -29,12 +31,27 @@ namespace JPKvalidator
             {
                 try
                 {
-                    //ReadXML(openMyFile.FileName);
+                    ReadXML(openMyFile.FileName);
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show("Error: Could not read file from disk. Original error: " + ex.Message);
                 }
+            }
+        }
+        private void ReadXML(string fileName)
+        {
+            XmlReader xmlFile;
+            xmlFile = XmlReader.Create(fileName);
+                       
+            using (xmlFile)
+            {
+                JPK jpkItem= new JPK();
+                jpkItem.AddNaglowek("JPK_VAT (1)", "1-0", "JPK_VAT", "1","1", "2016 - 11 - 30T09: 21:22", "2016-10-01", "2016-10-31","PLN","1473");
+                xmlFile.ReadToFollowing("tns:KodFormularza");
+                string genre = xmlFile.ReadElementContentAsString();
+                MessageBox.Show(genre);
+               
             }
         }
 

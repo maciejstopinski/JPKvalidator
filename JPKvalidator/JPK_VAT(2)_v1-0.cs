@@ -13,7 +13,8 @@ namespace JPKvalidator
     using System.Xml.Schema;
     using System.ComponentModel;
     using System.Collections.Generic;
-
+    using System.Globalization;
+    using System.Windows.Forms;
 
     public partial class JPK
     {
@@ -4484,6 +4485,25 @@ namespace JPKvalidator
             {
                 this.podatekNaliczonyField = value;
             }
+        }
+    }
+    public partial class JPK //Metody do obs³ugi klasy JPK
+    {
+        
+        public void AddNaglowek(string kodSystemowy,string wersjaSchemy, string kodFormularza, string WariantFormularza,string CelZlozenia,string DataWytworzeniaJPK,string DataOd,string DataDo, string DomyslnyKodWaluty,string KodUrzedu)
+        {
+            this.Naglowek.KodFormularza.kodSystemowy = kodSystemowy;
+            this.Naglowek.KodFormularza.wersjaSchemy = wersjaSchemy;
+            this.Naglowek.KodFormularza.Value = (TKodFormularza)Enum.Parse(typeof(TKodFormularza), kodFormularza);
+            this.Naglowek.WariantFormularza = Convert.ToSByte(WariantFormularza);
+            this.Naglowek.CelZlozenia= Convert.ToSByte(CelZlozenia);
+            this.Naglowek.DataWytworzeniaJPK = DateTime.Parse(DataWytworzeniaJPK);
+            this.Naglowek.DataOd = DateTime.Parse(DataOd);
+            this.Naglowek.DataDo = DateTime.Parse(DataDo);
+            this.Naglowek.DomyslnyKodWaluty = (currCode_Type)Enum.Parse(typeof(currCode_Type), DomyslnyKodWaluty);
+            this.Naglowek.KodUrzedu = (TKodUS)Enum.Parse(typeof(TKodUS), KodUrzedu);
+
+
         }
     }
 }
