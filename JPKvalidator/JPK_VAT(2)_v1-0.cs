@@ -4505,5 +4505,41 @@ namespace JPKvalidator
 
 
         }
+        public void AddPodmiot1(string nIP,string pelnaNazwa,string rEGON, string kodKraju,string wojewodztwo,string powiat, string gmina,string ulica, string nrDomu,string nrLokalu, string miejscowosc,string kodPocztowy,string poczta)
+        {
+            this.Podmiot1.IdentyfikatorPodmiotu.NIP = nIP;
+            this.Podmiot1.IdentyfikatorPodmiotu.PelnaNazwa = pelnaNazwa;
+            this.Podmiot1.IdentyfikatorPodmiotu.REGON = rEGON;
+            this.Podmiot1.AdresPodmiotu.KodKraju = (TKodKraju)Enum.Parse(typeof(TKodKraju), kodKraju);
+            this.Podmiot1.AdresPodmiotu.Wojewodztwo = wojewodztwo;
+            this.Podmiot1.AdresPodmiotu.Powiat = powiat;
+            this.Podmiot1.AdresPodmiotu.Gmina = gmina;
+            this.Podmiot1.AdresPodmiotu.Ulica = ulica;
+            this.Podmiot1.AdresPodmiotu.NrDomu = nrDomu;
+            this.Podmiot1.AdresPodmiotu.NrLokalu = nrLokalu;
+            this.Podmiot1.AdresPodmiotu.Miejscowosc = miejscowosc;
+            this.Podmiot1.AdresPodmiotu.KodPocztowy = kodPocztowy;
+            this.Podmiot1.AdresPodmiotu.Poczta = poczta;
+        }
+        public void AddJPKSprzedarzWiersz()
+        {
+            JPKSprzedazWiersz sprzedarzwiersz = new JPKSprzedazWiersz();
+            sprzedarzwiersz.LpSprzedazy = "wiersz1";
+            this.SprzedazWiersz.Add(sprzedarzwiersz);
+
+        }
+        public void AddJPKSprzedarzCtrl()
+        {
+
+        }
+        public void AddJPKZakupWiersz()
+        {
+
+        }
+        public void AddJPKZakupCtrl()
+        {
+
+        }
+
     }
 }
