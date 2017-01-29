@@ -4652,9 +4652,11 @@ namespace JPKvalidator
             this.SprzedazWiersz.Add(sprzedarzwiersz);
 
         }
-        public void AddJPKSprzedarzCtrl()
+        public void AddJPKSprzedarzCtrl(string liczbaWierszySprzedazy,string podatekNalezny)
         {
-
+            CultureInfo culture = new CultureInfo("en-US");
+            this.SprzedazCtrl.LiczbaWierszySprzedazy = liczbaWierszySprzedazy;
+            this.SprzedazCtrl.PodatekNalezny= Convert.ToDecimal(podatekNalezny, culture);
         }
         public void AddJPKZakupWiersz()
         {
