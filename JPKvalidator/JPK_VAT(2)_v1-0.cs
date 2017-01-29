@@ -4685,16 +4685,16 @@ namespace JPKvalidator
             zakupwiersz.NazwaDostawcy = nazwaDostawcy;
             zakupwiersz.AdresDostawcy = adresDostawcy;
             zakupwiersz.DowodZakupu = dowodZakupu;
-            zakupwiersz.DataZakupu = DateTime.Parse(dataZakupu);
+            if(dataZakupu!=null)zakupwiersz.DataZakupu = DateTime.Parse(dataZakupu);
             zakupwiersz.DataWplywu = DateTime.Parse(dataWplywu);
             zakupwiersz.K_43 = Convert.ToDecimal(k_43, culture);
-            zakupwiersz.K_44 = Convert.ToDecimal(k_43, culture);
-            zakupwiersz.K_45 = Convert.ToDecimal(k_43, culture);
-            zakupwiersz.K_46 = Convert.ToDecimal(k_43, culture);
-            zakupwiersz.K_47 = Convert.ToDecimal(k_43, culture);
-            zakupwiersz.K_48 = Convert.ToDecimal(k_43, culture);
-            zakupwiersz.K_49 = Convert.ToDecimal(k_43, culture);
-            zakupwiersz.K_50 = Convert.ToDecimal(k_43, culture);
+            zakupwiersz.K_44 = Convert.ToDecimal(k_44, culture);
+            zakupwiersz.K_45 = Convert.ToDecimal(k_45, culture);
+            zakupwiersz.K_46 = Convert.ToDecimal(k_46, culture);
+            zakupwiersz.K_47 = Convert.ToDecimal(k_47, culture);
+            zakupwiersz.K_48 = Convert.ToDecimal(k_48, culture);
+            zakupwiersz.K_49 = Convert.ToDecimal(k_49, culture);
+            zakupwiersz.K_50 = Convert.ToDecimal(k_50, culture);
             zakupwiersz.typ = typ;
             this.ZakupWiersz.Add(zakupwiersz);
         }

@@ -85,6 +85,7 @@ namespace JPKvalidator
             ReadPodmiot1(fileName);
             ReadSprzedaz(fileName);
             ReadSprzedazCtrl(fileName);
+            ReadZakupy(fileName);
 
             listaJPK.Add(jpkItem);
             jpkItem = null;
@@ -423,6 +424,36 @@ namespace JPKvalidator
                 }
             }
             jpkItem.AddJPKSprzedazCtrl(liczbaWierszySprzedazy, podatekNalezny);
+        }
+        private void ReadZakupy(string fileName)
+        {
+            XElement root = XElement.Load(fileName);
+            XNamespace aw = root.GetNamespaceOfPrefix("tns");
+            IEnumerable<XElement> sprzedaz =
+                from wiersz in root.Elements(aw + "ZakupWiersz")
+                select wiersz;
+            foreach (XElement wiersz in sprzedaz)
+            {
+                string lpZakupu = (string)wiersz.Element(aw + "LpZakupu");
+                string nrDostawcy = (string)wiersz.Element(aw + "NrIdWystawcy");
+                string nazwaDostawcy = (string)wiersz.Element(aw + "NazwaWystawcy");
+                string adresDostawcy = (string)wiersz.Element(aw + "AdresWystawcy");
+                string dowodZakupu = (string)wiersz.Element(aw + "NrFaktury");
+                string dataZakupu = (string)wiersz.Element(aw + "DataZakupu");
+                string dataWplywu = (string)wiersz.Element(aw + "DataWplywuFaktury");
+                string k_43 = (string)wiersz.Element(aw + "K_43");
+                string k_44 = (string)wiersz.Element(aw + "K_44");
+                string k_45 = (string)wiersz.Element(aw + "K_45");
+                string k_46 = (string)wiersz.Element(aw + "K_46");
+                string k_47 = (string)wiersz.Element(aw + "K_47");
+                string k_48 = (string)wiersz.Element(aw + "K_48");
+                string k_49 = (string)wiersz.Element(aw + "K_49");
+                string k_50 = (string)wiersz.Element(aw + "K_50");
+                string typ = wiersz.Attribute("typ").Value;
+                jpkItem.AddJPKZakupWiersz(lpZakupu,nrDostawcy,nazwaDostawcy,adresDostawcy,dowodZakupu,
+                                        dataZakupu,dataWplywu,k_43,k_44,k_45,k_46,k_47,
+                                        k_48,k_49,k_50,typ);
+            }
         }
         private void zamknijToolStripMenuItem_Click(object sender, EventArgs e)
         {
