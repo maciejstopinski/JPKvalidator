@@ -19,7 +19,7 @@ namespace JPKvalidator
             InitializeComponent();
         }
         private List<JPK> listaJPK= new List<JPK>();
-        private JPK jpkItem = new JPK();
+        private JPK jpkItem;
         private void OpenFile()
         {
             OpenFileDialog openMyFile = new OpenFileDialog();
@@ -31,15 +31,17 @@ namespace JPKvalidator
 
             if (openMyFile.ShowDialog() == DialogResult.OK)
             {
+                string fileName = openMyFile.FileName;
                 try
                 {
-                    ReadXML(openMyFile.FileName);
+                   ReadXML(fileName);
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show("Error: Could not read file from disk. Original error: " + ex.Message);
                 }
             }
+           
         }
         
         private void ReadXML(string fileName)
@@ -77,6 +79,7 @@ namespace JPKvalidator
             //xmlFile.ReadToFollowing("tns:KodUrzedu");
             //jpkItem.Naglowek.KodUrzedu = (TKodUS)Enum.Parse(typeof(TKodUS), xmlFile.ReadElementContentAsString());
             #endregion
+            jpkItem = new JPK();
 
             ReadNaglowek(fileName);
             ReadPodmiot1(fileName);
@@ -84,7 +87,7 @@ namespace JPKvalidator
 
             listaJPK.Add(jpkItem);
             jpkItem = null;
-            MessageBox.Show(":)");
+          //  MessageBox.Show(":)");
 
         }
         private void ReadNaglowek(string fileName)
@@ -324,7 +327,8 @@ namespace JPKvalidator
 
            
             XElement root = XElement.Load(fileName);
-            XNamespace aw = "http://jpk.mf.gov.pl/wzor/2016/03/09/03094/";
+            //XNamespace aw = "http://jpk.mf.gov.pl/wzor/2016/03/09/03094/";
+            XNamespace aw = root.GetNamespaceOfPrefix("tns");
             IEnumerable<XElement> sprzedaz =
                 from wiersz in root.Elements(aw+"SprzedazWiersz")
                 select wiersz;
