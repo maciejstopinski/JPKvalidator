@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
+using System.Xml.Linq;
 
 namespace JPKvalidator
 {
@@ -79,7 +80,7 @@ namespace JPKvalidator
 
             ReadNaglowek(fileName);
             ReadPodmiot1(fileName);
-
+            ReadSprzedaz(fileName);
 
             listaJPK.Add(jpkItem);
             jpkItem = null;
@@ -317,6 +318,67 @@ namespace JPKvalidator
             }
         
              jpkItem.AddPodmiot1(nIP, pelnaNazwa, rEGON, kodKraju, wojewodztwo, powiat, gmina, ulica, nrDomu, nrLokalu, miejscowosc, kodPocztowy, poczta);
+        }
+        private void ReadSprzedaz(string fileName)
+        {
+
+           
+            XElement root = XElement.Load(fileName);
+            XNamespace aw = "http://jpk.mf.gov.pl/wzor/2016/03/09/03094/";
+            IEnumerable<XElement> sprzedaz =
+                from wiersz in root.Elements(aw+"SprzedazWiersz")
+                select wiersz;
+            foreach (XElement wiersz in sprzedaz)
+            {
+                string lpSprzedazy = (string)wiersz.Element(aw+"LpSprzedazy");
+                string nrKontrahenta = (string)wiersz.Element(aw + "NrKontrahenta");
+                string nazwaKontrahenta = (string)wiersz.Element(aw + "NazwaNabywcy");
+                string adresKontrahenta = (string)wiersz.Element(aw + "AdresKontrahenta");
+                string dowodSprzedazy = (string)wiersz.Element(aw + "NrDokumentu");
+                string dataWystawienia = (string)wiersz.Element(aw + "DataWystawienia");
+                string dataSprzedazy = (string)wiersz.Element(aw + "DataSprzedazy");
+                string k_10 = (string)wiersz.Element(aw + "K_10");
+                string k_11 = (string)wiersz.Element(aw + "K_11");
+                string k_12 = (string)wiersz.Element(aw + "K_12");
+                string k_13 = (string)wiersz.Element(aw + "K_13");
+                string k_14 = (string)wiersz.Element(aw + "K_14");
+                string k_15 = (string)wiersz.Element(aw + "K_15");
+                string k_16 = (string)wiersz.Element(aw + "K_16");
+                string k_17 = (string)wiersz.Element(aw + "K_17");
+                string k_18 = (string)wiersz.Element(aw + "K_18");
+                string k_19 = (string)wiersz.Element(aw + "K_19");
+                string k_20 = (string)wiersz.Element(aw + "K_20");
+                string k_21 = (string)wiersz.Element(aw + "K_21");
+                string k_22 = (string)wiersz.Element(aw + "K_22");
+                string k_23 = (string)wiersz.Element(aw + "K_23");
+                string k_24 = (string)wiersz.Element(aw + "K_24");
+                string k_25 = (string)wiersz.Element(aw + "K_25");
+                string k_26 = (string)wiersz.Element(aw + "K_26");
+                string k_27 = (string)wiersz.Element(aw + "K_27");
+                string k_28 = (string)wiersz.Element(aw + "K_28");
+                string k_29 = (string)wiersz.Element(aw + "K_29");
+                string k_30 = (string)wiersz.Element(aw + "K_30");
+                string k_31 = (string)wiersz.Element(aw + "K_31");
+                string k_32 = (string)wiersz.Element(aw + "K_32");
+                string k_33 = (string)wiersz.Element(aw + "K_33");
+                string k_34 = (string)wiersz.Element(aw + "K_34");
+                string k_35 = (string)wiersz.Element(aw + "K_35");
+                string k_36 = (string)wiersz.Element(aw + "K_36");
+                string k_37 = (string)wiersz.Element(aw + "K_37");
+                string k_38 = (string)wiersz.Element(aw + "K_38");
+                string k_39 = (string)wiersz.Element(aw + "K_39");
+                string typ=wiersz.Attribute("typ").Value;
+                jpkItem.AddJPKSprzedarzWiersz(
+                                                lpSprzedazy, nrKontrahenta, nazwaKontrahenta, adresKontrahenta, dowodSprzedazy, dataWystawienia, dataSprzedazy, k_10, k_11, k_12, k_13, k_14,
+                                                k_15, k_16, k_17, k_18, k_19, k_20, k_21, k_22, k_23, k_24, k_25, k_26, k_27, k_28, k_29, k_30, k_31, k_32, k_33, k_34, k_35, k_36, k_37, k_38, k_39, typ);
+              
+
+            }
+
+
+
+
+
         }
         private void zamknijToolStripMenuItem_Click(object sender, EventArgs e)
         {
