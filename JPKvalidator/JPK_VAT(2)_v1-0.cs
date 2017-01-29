@@ -4521,10 +4521,133 @@ namespace JPKvalidator
             this.Podmiot1.AdresPodmiotu.KodPocztowy = kodPocztowy;
             this.Podmiot1.AdresPodmiotu.Poczta = poczta;
         }
-        public void AddJPKSprzedarzWiersz()
+        public void AddJPKSprzedarzWiersz(
+            string lpSprzedazy,string nrKontrahenta,string nazwaKontrahenta,string adresKontrahenta,string dowodSprzedazy,
+            string dataWystawienia,string dataSprzedazy,string k_10,string k_11,string k_12,string k_13,string k_14,
+            string k_15,string k_16,string k_17,string k_18, string k_19,string k_20,string k_21, string k_22,string k_23,
+            string k_24,string k_25,string k_26,string k_27,string k_28,string k_29,string k_30,string k_31,string k_32,
+            string k_33,string k_34,string k_35,string k_36,string k_37,string k_38,string k_39,string typ)
         {
+            #region ZMIENNE
+            //string lpSprzedazy;
+
+            //string nrKontrahenta;
+
+            //string nazwaKontrahenta;
+
+            //string adresKontrahenta;
+
+            //string dowodSprzedazy;
+
+            //string dataWystawienia;
+
+            //string dataSprzedazy;
+
+            //string k_10;
+
+            //string k_11;
+
+            //string k_12;
+
+            //string k_13;
+
+            //string k_14;
+
+            //string k_15;
+
+            //string k_16;
+
+            //string k_17;
+
+            //string k_18;
+
+            //string k_19;
+
+            //string k_20;
+
+            //string k_21;
+
+            //string k_22;
+
+            //string k_23;
+
+            //string k_24;
+
+            //string k_25;
+
+            //string k_26;
+
+            //string k_27;
+
+            //string k_28;
+
+            //string k_29;
+
+            //string k_30;
+
+            //string k_31;
+
+            //string k_32;
+
+            //string k_33;
+
+            //string k_34;
+
+            //string k_35;
+
+            //string k_36;
+
+            //string k_37;
+
+            //string k_38;
+
+            //string k_39;
+
+            //string typ;
+            #endregion
             JPKSprzedazWiersz sprzedarzwiersz = new JPKSprzedazWiersz();
-            sprzedarzwiersz.LpSprzedazy = "wiersz1";
+            sprzedarzwiersz.LpSprzedazy = lpSprzedazy;
+            sprzedarzwiersz.NazwaKontrahenta = nazwaKontrahenta;
+            sprzedarzwiersz.AdresKontrahenta = adresKontrahenta;
+            sprzedarzwiersz.DowodSprzedazy = dowodSprzedazy;
+            sprzedarzwiersz.DataWystawienia= DateTime.Parse(dataWystawienia);
+            sprzedarzwiersz.DataSprzedazy = DateTime.Parse(dataSprzedazy);
+            sprzedarzwiersz.K_10 = Convert.ToDecimal(k_10);
+            sprzedarzwiersz.K_11 = Convert.ToDecimal(k_11);
+            sprzedarzwiersz.K_12 = Convert.ToDecimal(k_12);
+            sprzedarzwiersz.K_13 = Convert.ToDecimal(k_13);
+            sprzedarzwiersz.K_14 = Convert.ToDecimal(k_14);
+            sprzedarzwiersz.K_15 = Convert.ToDecimal(k_15);
+            sprzedarzwiersz.K_16 = Convert.ToDecimal(k_16);
+            sprzedarzwiersz.K_17 = Convert.ToDecimal(k_17);
+            sprzedarzwiersz.K_18 = Convert.ToDecimal(k_18);
+            sprzedarzwiersz.K_19 = Convert.ToDecimal(k_19);
+            sprzedarzwiersz.K_20 = Convert.ToDecimal(k_20);
+            sprzedarzwiersz.K_21 = Convert.ToDecimal(k_21);
+            sprzedarzwiersz.K_22 = Convert.ToDecimal(k_22);
+            sprzedarzwiersz.K_23 = Convert.ToDecimal(k_23);
+            sprzedarzwiersz.K_24 = Convert.ToDecimal(k_24);
+            sprzedarzwiersz.K_25 = Convert.ToDecimal(k_25);
+            sprzedarzwiersz.K_26 = Convert.ToDecimal(k_26);
+            sprzedarzwiersz.K_27 = Convert.ToDecimal(k_27);
+            sprzedarzwiersz.K_28 = Convert.ToDecimal(k_28);
+            sprzedarzwiersz.K_29 = Convert.ToDecimal(k_29);
+            sprzedarzwiersz.K_30 = Convert.ToDecimal(k_30);
+            sprzedarzwiersz.K_31 = Convert.ToDecimal(k_31);
+            sprzedarzwiersz.K_32 = Convert.ToDecimal(k_32);
+            sprzedarzwiersz.K_33 = Convert.ToDecimal(k_33);
+            sprzedarzwiersz.K_34 = Convert.ToDecimal(k_34);
+            sprzedarzwiersz.K_35 = Convert.ToDecimal(k_35);
+            sprzedarzwiersz.K_36 = Convert.ToDecimal(k_36);
+            sprzedarzwiersz.K_37 = Convert.ToDecimal(k_37);
+            sprzedarzwiersz.K_38 = Convert.ToDecimal(k_38);
+            sprzedarzwiersz.K_39 = Convert.ToDecimal(k_39);
+            sprzedarzwiersz.typ = typ;
+
+
+
+
+
             this.SprzedazWiersz.Add(sprzedarzwiersz);
 
         }
