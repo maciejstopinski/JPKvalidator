@@ -84,6 +84,7 @@ namespace JPKvalidator
             ReadNaglowek(fileName);
             ReadPodmiot1(fileName);
             ReadSprzedaz(fileName);
+            ReadSprzedazCtrl(fileName);
 
             listaJPK.Add(jpkItem);
             jpkItem = null;
@@ -383,6 +384,45 @@ namespace JPKvalidator
 
 
 
+        }
+        private void ReadSprzedazCtrl(string fileName)
+        {
+            XmlReader xmlFile;
+            xmlFile = XmlReader.Create(fileName);
+            string liczbaWierszySprzedazy = "";
+            string podatekNalezny = "";
+            using (xmlFile)
+            {
+
+                while (xmlFile.Read())
+                {
+                    // Only detect start elements.
+                    if (xmlFile.IsStartElement())
+                    {
+                       switch (xmlFile.Name)
+                       { 
+                            case @"tns:LiczbaWierszySprzedazy":
+                                // Detect this element.
+                                if (xmlFile.Read())
+                                {
+                                    liczbaWierszySprzedazy = xmlFile.Value.Trim();
+                                }
+                                break;
+                            case @"tns:PodatekNalezny":
+                                // Detect this element.
+                                if (xmlFile.Read())
+                                {
+                                    podatekNalezny = xmlFile.Value.Trim();
+                                }
+                                break;
+
+
+                        }
+
+                    }
+                }
+            }
+            jpkItem.AddJPKSprzedarzCtrl(liczbaWierszySprzedazy, podatekNalezny);
         }
         private void zamknijToolStripMenuItem_Click(object sender, EventArgs e)
         {
