@@ -86,10 +86,10 @@ namespace JPKvalidator
             ReadSprzedaz(fileName);
             ReadSprzedazCtrl(fileName);
             ReadZakupy(fileName);
-
+            ReadZakupyCtrl(fileName);
             listaJPK.Add(jpkItem);
             jpkItem = null;
-          //  MessageBox.Show(":)");
+          
 
         }
         private void ReadNaglowek(string fileName)
@@ -454,6 +454,45 @@ namespace JPKvalidator
                                         dataZakupu,dataWplywu,k_43,k_44,k_45,k_46,k_47,
                                         k_48,k_49,k_50,typ);
             }
+        }
+        private void ReadZakupyCtrl(string fileName)
+        {
+            XmlReader xmlFile;
+            xmlFile = XmlReader.Create(fileName);
+            string liczbaWierszyZakupow = "";
+            string podatekNaliczony = "";
+            using (xmlFile)
+            {
+
+                while (xmlFile.Read())
+                {
+                    // Only detect start elements.
+                    if (xmlFile.IsStartElement())
+                    {
+                        switch (xmlFile.Name)
+                        {
+                            case @"tns:LiczbaWierszyZakupow":
+                                // Detect this element.
+                                if (xmlFile.Read())
+                                {
+                                    liczbaWierszyZakupow = xmlFile.Value.Trim();
+                                }
+                                break;
+                            case @"tns:PodatekNaliczony":
+                                // Detect this element.
+                                if (xmlFile.Read())
+                                {
+                                    podatekNaliczony = xmlFile.Value.Trim();
+                                }
+                                break;
+
+
+                        }
+
+                    }
+                }
+            }
+            jpkItem.AddJPKZakupCtrl(liczbaWierszyZakupow,podatekNaliczony);
         }
         private void zamknijToolStripMenuItem_Click(object sender, EventArgs e)
         {
