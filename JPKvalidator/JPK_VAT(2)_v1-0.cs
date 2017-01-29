@@ -4698,9 +4698,11 @@ namespace JPKvalidator
             zakupwiersz.typ = typ;
             this.ZakupWiersz.Add(zakupwiersz);
         }
-        public void AddJPKZakupCtrl()
+        public void AddJPKZakupCtrl(string liczbaWierszyZakupow,string podatekNaliczony)
         {
-
+            CultureInfo culture = new CultureInfo("en-US");
+            this.ZakupCtrl.LiczbaWierszyZakupow = liczbaWierszyZakupow;
+            this.ZakupCtrl.PodatekNaliczony = Convert.ToDecimal(podatekNaliczony, culture);
         }
 
     }
