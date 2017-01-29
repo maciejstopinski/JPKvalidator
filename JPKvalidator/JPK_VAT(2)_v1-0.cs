@@ -4521,7 +4521,7 @@ namespace JPKvalidator
             this.Podmiot1.AdresPodmiotu.KodPocztowy = kodPocztowy;
             this.Podmiot1.AdresPodmiotu.Poczta = poczta;
         }
-        public void AddJPKSprzedarzWiersz(
+        public void AddJPKSprzedazWiersz(
             string lpSprzedazy,string nrKontrahenta,string nazwaKontrahenta,string adresKontrahenta,string dowodSprzedazy,
             string dataWystawienia,string dataSprzedazy,string k_10,string k_11,string k_12,string k_13,string k_14,
             string k_15,string k_16,string k_17,string k_18, string k_19,string k_20,string k_21, string k_22,string k_23,
@@ -4652,7 +4652,7 @@ namespace JPKvalidator
             this.SprzedazWiersz.Add(sprzedarzwiersz);
 
         }
-        public void AddJPKSprzedarzCtrl(string liczbaWierszySprzedazy,string podatekNalezny)
+        public void AddJPKSprzedazCtrl(string liczbaWierszySprzedazy,string podatekNalezny)
         {
             CultureInfo culture = new CultureInfo("en-US");
             this.SprzedazCtrl.LiczbaWierszySprzedazy = liczbaWierszySprzedazy;

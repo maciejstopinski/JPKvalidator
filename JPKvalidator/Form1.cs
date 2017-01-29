@@ -373,7 +373,7 @@ namespace JPKvalidator
                 string k_38 = (string)wiersz.Element(aw + "K_38");
                 string k_39 = (string)wiersz.Element(aw + "K_39");
                 string typ=wiersz.Attribute("typ").Value;
-                jpkItem.AddJPKSprzedarzWiersz(
+                jpkItem.AddJPKSprzedazWiersz(
                                                 lpSprzedazy, nrKontrahenta, nazwaKontrahenta, adresKontrahenta, dowodSprzedazy, dataWystawienia, dataSprzedazy, k_10, k_11, k_12, k_13, k_14,
                                                 k_15, k_16, k_17, k_18, k_19, k_20, k_21, k_22, k_23, k_24, k_25, k_26, k_27, k_28, k_29, k_30, k_31, k_32, k_33, k_34, k_35, k_36, k_37, k_38, k_39, typ);
               
@@ -422,7 +422,7 @@ namespace JPKvalidator
                     }
                 }
             }
-            jpkItem.AddJPKSprzedarzCtrl(liczbaWierszySprzedazy, podatekNalezny);
+            jpkItem.AddJPKSprzedazCtrl(liczbaWierszySprzedazy, podatekNalezny);
         }
         private void zamknijToolStripMenuItem_Click(object sender, EventArgs e)
         {
