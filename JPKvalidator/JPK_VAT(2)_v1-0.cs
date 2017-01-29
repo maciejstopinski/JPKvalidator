@@ -4605,51 +4605,51 @@ namespace JPKvalidator
 
             //string typ;
             #endregion
-            JPKSprzedazWiersz sprzedarzwiersz = new JPKSprzedazWiersz();
+            JPKSprzedazWiersz sprzedazwiersz = new JPKSprzedazWiersz();
             CultureInfo culture = new CultureInfo("en-US");
-            sprzedarzwiersz.LpSprzedazy = lpSprzedazy;
-            sprzedarzwiersz.NazwaKontrahenta = nazwaKontrahenta;
-            sprzedarzwiersz.AdresKontrahenta = adresKontrahenta;
-            sprzedarzwiersz.DowodSprzedazy = dowodSprzedazy;
-            sprzedarzwiersz.DataWystawienia= DateTime.Parse(dataWystawienia);
-            sprzedarzwiersz.DataSprzedazy = DateTime.Parse(dataSprzedazy);
-            sprzedarzwiersz.K_10 = Convert.ToDecimal(k_10, culture);
-            sprzedarzwiersz.K_11 = Convert.ToDecimal(k_11, culture);
-            sprzedarzwiersz.K_12 = Convert.ToDecimal(k_12, culture);
-            sprzedarzwiersz.K_13 = Convert.ToDecimal(k_13, culture);
-            sprzedarzwiersz.K_14 = Convert.ToDecimal(k_14, culture);
-            sprzedarzwiersz.K_15 = Convert.ToDecimal(k_15, culture);
-            sprzedarzwiersz.K_16 = Convert.ToDecimal(k_16, culture);
-            sprzedarzwiersz.K_17 = Convert.ToDecimal(k_17, culture);
-            sprzedarzwiersz.K_18 = Convert.ToDecimal(k_18, culture);
-            sprzedarzwiersz.K_19 = Convert.ToDecimal(k_19, culture);
-            sprzedarzwiersz.K_20 = Convert.ToDecimal(k_20, culture);
-            sprzedarzwiersz.K_21 = Convert.ToDecimal(k_21, culture);
-            sprzedarzwiersz.K_22 = Convert.ToDecimal(k_22, culture);
-            sprzedarzwiersz.K_23 = Convert.ToDecimal(k_23, culture);
-            sprzedarzwiersz.K_24 = Convert.ToDecimal(k_24, culture);
-            sprzedarzwiersz.K_25 = Convert.ToDecimal(k_25, culture);
-            sprzedarzwiersz.K_26 = Convert.ToDecimal(k_26, culture);
-            sprzedarzwiersz.K_27 = Convert.ToDecimal(k_27, culture);
-            sprzedarzwiersz.K_28 = Convert.ToDecimal(k_28, culture);
-            sprzedarzwiersz.K_29 = Convert.ToDecimal(k_29, culture);
-            sprzedarzwiersz.K_30 = Convert.ToDecimal(k_30, culture);
-            sprzedarzwiersz.K_31 = Convert.ToDecimal(k_31, culture);
-            sprzedarzwiersz.K_32 = Convert.ToDecimal(k_32, culture);
-            sprzedarzwiersz.K_33 = Convert.ToDecimal(k_33, culture);
-            sprzedarzwiersz.K_34 = Convert.ToDecimal(k_34, culture);
-            sprzedarzwiersz.K_35 = Convert.ToDecimal(k_35, culture);
-            sprzedarzwiersz.K_36 = Convert.ToDecimal(k_36, culture);
-            sprzedarzwiersz.K_37 = Convert.ToDecimal(k_37, culture);
-            sprzedarzwiersz.K_38 = Convert.ToDecimal(k_38, culture);
-            sprzedarzwiersz.K_39 = Convert.ToDecimal(k_39, culture);
-            sprzedarzwiersz.typ = typ;
+            sprzedazwiersz.LpSprzedazy = lpSprzedazy;
+            sprzedazwiersz.NazwaKontrahenta = nazwaKontrahenta;
+            sprzedazwiersz.AdresKontrahenta = adresKontrahenta;
+            sprzedazwiersz.DowodSprzedazy = dowodSprzedazy;
+            sprzedazwiersz.DataWystawienia= DateTime.Parse(dataWystawienia);
+            sprzedazwiersz.DataSprzedazy = DateTime.Parse(dataSprzedazy);
+            sprzedazwiersz.K_10 = Convert.ToDecimal(k_10, culture);
+            sprzedazwiersz.K_11 = Convert.ToDecimal(k_11, culture);
+            sprzedazwiersz.K_12 = Convert.ToDecimal(k_12, culture);
+            sprzedazwiersz.K_13 = Convert.ToDecimal(k_13, culture);
+            sprzedazwiersz.K_14 = Convert.ToDecimal(k_14, culture);
+            sprzedazwiersz.K_15 = Convert.ToDecimal(k_15, culture);
+            sprzedazwiersz.K_16 = Convert.ToDecimal(k_16, culture);
+            sprzedazwiersz.K_17 = Convert.ToDecimal(k_17, culture);
+            sprzedazwiersz.K_18 = Convert.ToDecimal(k_18, culture);
+            sprzedazwiersz.K_19 = Convert.ToDecimal(k_19, culture);
+            sprzedazwiersz.K_20 = Convert.ToDecimal(k_20, culture);
+            sprzedazwiersz.K_21 = Convert.ToDecimal(k_21, culture);
+            sprzedazwiersz.K_22 = Convert.ToDecimal(k_22, culture);
+            sprzedazwiersz.K_23 = Convert.ToDecimal(k_23, culture);
+            sprzedazwiersz.K_24 = Convert.ToDecimal(k_24, culture);
+            sprzedazwiersz.K_25 = Convert.ToDecimal(k_25, culture);
+            sprzedazwiersz.K_26 = Convert.ToDecimal(k_26, culture);
+            sprzedazwiersz.K_27 = Convert.ToDecimal(k_27, culture);
+            sprzedazwiersz.K_28 = Convert.ToDecimal(k_28, culture);
+            sprzedazwiersz.K_29 = Convert.ToDecimal(k_29, culture);
+            sprzedazwiersz.K_30 = Convert.ToDecimal(k_30, culture);
+            sprzedazwiersz.K_31 = Convert.ToDecimal(k_31, culture);
+            sprzedazwiersz.K_32 = Convert.ToDecimal(k_32, culture);
+            sprzedazwiersz.K_33 = Convert.ToDecimal(k_33, culture);
+            sprzedazwiersz.K_34 = Convert.ToDecimal(k_34, culture);
+            sprzedazwiersz.K_35 = Convert.ToDecimal(k_35, culture);
+            sprzedazwiersz.K_36 = Convert.ToDecimal(k_36, culture);
+            sprzedazwiersz.K_37 = Convert.ToDecimal(k_37, culture);
+            sprzedazwiersz.K_38 = Convert.ToDecimal(k_38, culture);
+            sprzedazwiersz.K_39 = Convert.ToDecimal(k_39, culture);
+            sprzedazwiersz.typ = typ;
 
 
 
 
 
-            this.SprzedazWiersz.Add(sprzedarzwiersz);
+            this.SprzedazWiersz.Add(sprzedazwiersz);
 
         }
         public void AddJPKSprzedazCtrl(string liczbaWierszySprzedazy,string podatekNalezny)
@@ -4658,9 +4658,45 @@ namespace JPKvalidator
             this.SprzedazCtrl.LiczbaWierszySprzedazy = liczbaWierszySprzedazy;
             this.SprzedazCtrl.PodatekNalezny= Convert.ToDecimal(podatekNalezny, culture);
         }
-        public void AddJPKZakupWiersz()
+        public void AddJPKZakupWiersz(string lpZakupu,string nrDostawcy,string nazwaDostawcy,string adresDostawcy,string dowodZakupu,
+                                        string dataZakupu,string dataWplywu,string k_43,string k_44,string k_45,string k_46,string k_47,
+                                        string k_48,string k_49,string k_50,string typ)
         {
-
+            JPKZakupWiersz zakupwiersz = new JPKZakupWiersz();
+            CultureInfo culture = new CultureInfo("en-US");
+            //string lpZakupu;
+            //string nrDostawcy;
+            //string nazwaDostawcy;
+            //string adresDostawcy;
+            //string dowodZakupu;
+            //string dataZakupu;
+            //string dataWplywu;
+            //string k_43;
+            //string k_44;
+            //string k_45;
+            //string k_46;
+            //string k_47;
+            //string k_48;
+            //string k_49;
+            //string k_50;
+            //string typ;
+            zakupwiersz.LpZakupu = lpZakupu;
+            zakupwiersz.NrDostawcy = nrDostawcy;
+            zakupwiersz.NazwaDostawcy = nazwaDostawcy;
+            zakupwiersz.AdresDostawcy = adresDostawcy;
+            zakupwiersz.DowodZakupu = dowodZakupu;
+            zakupwiersz.DataZakupu = DateTime.Parse(dataZakupu);
+            zakupwiersz.DataWplywu = DateTime.Parse(dataWplywu);
+            zakupwiersz.K_43 = Convert.ToDecimal(k_43, culture);
+            zakupwiersz.K_44 = Convert.ToDecimal(k_43, culture);
+            zakupwiersz.K_45 = Convert.ToDecimal(k_43, culture);
+            zakupwiersz.K_46 = Convert.ToDecimal(k_43, culture);
+            zakupwiersz.K_47 = Convert.ToDecimal(k_43, culture);
+            zakupwiersz.K_48 = Convert.ToDecimal(k_43, culture);
+            zakupwiersz.K_49 = Convert.ToDecimal(k_43, culture);
+            zakupwiersz.K_50 = Convert.ToDecimal(k_43, culture);
+            zakupwiersz.typ = typ;
+            this.ZakupWiersz.Add(zakupwiersz);
         }
         public void AddJPKZakupCtrl()
         {
