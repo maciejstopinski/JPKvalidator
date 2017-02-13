@@ -20,6 +20,8 @@ namespace JPKvalidator
         }
         private List<JPK> listaJPK= new List<JPK>();
         private JPK jpkItem;
+        private ListViewItem jpkListViewItem;
+       
         private void OpenFile()
         {
             OpenFileDialog openMyFile = new OpenFileDialog();
@@ -89,6 +91,7 @@ namespace JPKvalidator
             ReadZakupyCtrl(fileName);
             listaJPK.Add(jpkItem);
             jpkItem = null;
+            listVievFill(listaJPK);
           
 
         }
@@ -244,70 +247,70 @@ namespace JPKvalidator
                                     rEGON = xmlFile.Value.Trim();
                                 }
                                 break;
-                            case @"etd:KodKraju":
+                            case @"tns:KodKraju":
                                 // Detect this element.
                                 if (xmlFile.Read())
                                 {
                                     kodKraju = xmlFile.Value.Trim();
                                 }
                                 break;
-                            case @"etd:Wojewodztwo":
+                            case @"tns:Wojewodztwo":
                                 // Detect this element.
                                 if (xmlFile.Read())
                                 {
                                     wojewodztwo = xmlFile.Value.Trim();
                                 }
                                 break;
-                            case @"etd:Powiat":
+                            case @"tns:Powiat":
                                 // Detect this element.
                                 if (xmlFile.Read())
                                 {
                                     powiat = xmlFile.Value.Trim();
                                 }
                                 break;
-                            case @"etd:Gmina":
+                            case @"tns:Gmina":
                                 // Detect this element.
                                 if (xmlFile.Read())
                                 {
                                     gmina = xmlFile.Value.Trim();
                                 }
                                 break;
-                            case @"etd:Ulica":
+                            case @"tns:Ulica":
                                 // Detect this element.
                                 if (xmlFile.Read())
                                 {
                                     ulica = xmlFile.Value.Trim();
                                 }
                                 break;
-                            case @"etd:NrDomu":
+                            case @"tns:NrDomu":
                                 // Detect this element.
                                 if (xmlFile.Read())
                                 {
                                     nrDomu = xmlFile.Value.Trim();
                                 }
                                 break;
-                            case @"etd:NrLokalu":
+                            case @"tns:NrLokalu":
                                 // Detect this element.
                                 if (xmlFile.Read())
                                 {
                                     nrLokalu = xmlFile.Value.Trim();
                                 }
                                 break;
-                            case @"etd:Miejscowosc":
+                            case @"tns:Miejscowosc":
                                 // Detect this element.
                                 if (xmlFile.Read())
                                 {
                                     miejscowosc = xmlFile.Value.Trim();
                                 }
                                 break;
-                            case @"etd:KodPocztowy":
+                            case @"tns:KodPocztowy":
                                 // Detect this element.
                                 if (xmlFile.Read())
                                 {
                                     kodPocztowy = xmlFile.Value.Trim();
                                 }
                                 break;
-                            case @"etd:Poczta":
+                            case @"tns:Poczta":
                                 // Detect this element.
                                 if (xmlFile.Read())
                                 {
@@ -338,9 +341,9 @@ namespace JPKvalidator
             {
                 string lpSprzedazy = (string)wiersz.Element(aw+"LpSprzedazy");
                 string nrKontrahenta = (string)wiersz.Element(aw + "NrKontrahenta");
-                string nazwaKontrahenta = (string)wiersz.Element(aw + "NazwaNabywcy");
+                string nazwaKontrahenta = (string)wiersz.Element(aw + "NazwaKontrahenta");
                 string adresKontrahenta = (string)wiersz.Element(aw + "AdresKontrahenta");
-                string dowodSprzedazy = (string)wiersz.Element(aw + "NrDokumentu");
+                string dowodSprzedazy = (string)wiersz.Element(aw + "DowodSprzedazy");
                 string dataWystawienia = (string)wiersz.Element(aw + "DataWystawienia");
                 string dataSprzedazy = (string)wiersz.Element(aw + "DataSprzedazy");
                 string k_10 = (string)wiersz.Element(aw + "K_10");
@@ -435,12 +438,12 @@ namespace JPKvalidator
             foreach (XElement wiersz in sprzedaz)
             {
                 string lpZakupu = (string)wiersz.Element(aw + "LpZakupu");
-                string nrDostawcy = (string)wiersz.Element(aw + "NrIdWystawcy");
-                string nazwaDostawcy = (string)wiersz.Element(aw + "NazwaWystawcy");
-                string adresDostawcy = (string)wiersz.Element(aw + "AdresWystawcy");
-                string dowodZakupu = (string)wiersz.Element(aw + "NrFaktury");
+                string nrDostawcy = (string)wiersz.Element(aw + "NrDostawcy");
+                string nazwaDostawcy = (string)wiersz.Element(aw + "NazwaDostawcy");
+                string adresDostawcy = (string)wiersz.Element(aw + "AdresDostawcy");
+                string dowodZakupu = (string)wiersz.Element(aw + "DowodZakupu");
                 string dataZakupu = (string)wiersz.Element(aw + "DataZakupu");
-                string dataWplywu = (string)wiersz.Element(aw + "DataWplywuFaktury");
+                string dataWplywu = (string)wiersz.Element(aw + "DataWplywu");
                 string k_43 = (string)wiersz.Element(aw + "K_43");
                 string k_44 = (string)wiersz.Element(aw + "K_44");
                 string k_45 = (string)wiersz.Element(aw + "K_45");
@@ -494,6 +497,35 @@ namespace JPKvalidator
             }
             jpkItem.AddJPKZakupCtrl(liczbaWierszyZakupow,podatekNaliczony);
         }
+        private void listVievFill(List<JPK> listaJPK)
+        {
+            listJPK.Items.Clear();
+            int i = 0;
+            foreach (var item in listaJPK)
+            {
+                i++;
+                string[] arr = new string[16];
+                arr[0] = i.ToString();
+                arr[1] = item.Podmiot1.IdentyfikatorPodmiotu.PelnaNazwa;
+                arr[2] = item.Podmiot1.IdentyfikatorPodmiotu.NIP;
+                arr[3] = item.Podmiot1.IdentyfikatorPodmiotu.REGON;
+                arr[4] = item.Naglowek.DataOd.ToShortDateString();
+                arr[5] = item.Naglowek.DataDo.ToShortDateString();
+                arr[6] = item.ZakupCtrl.LiczbaWierszyZakupow;
+                arr[7] = item.ZakupCtrl.PodatekNaliczony.ToString();
+                arr[8] = item.SprzedazCtrl.LiczbaWierszySprzedazy;
+                arr[9] = item.SprzedazCtrl.PodatekNalezny.ToString();
+                arr[10] = item.Naglowek.CelZlozenia.ToString();
+                arr[11] = item.Naglowek.KodUrzedu.ToString();
+                arr[12] = item.Naglowek.DataWytworzeniaJPK.ToShortDateString() + " " + item.Naglowek.DataWytworzeniaJPK.ToLongTimeString();
+                arr[13] = item.Naglowek.KodFormularza.kodSystemowy.ToString()+" "+ item.Naglowek.KodFormularza.wersjaSchemy.ToString()+" "+ item.Naglowek.KodFormularza.Value.ToString();
+                arr[14] = item.Naglowek.WariantFormularza.ToString();
+                arr[15] = item.Naglowek.DomyslnyKodWaluty.ToString();
+                jpkListViewItem = new ListViewItem(arr);
+                listJPK.Items.Add(jpkListViewItem);
+               
+            }
+        }
         private void zamknijToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -502,6 +534,27 @@ namespace JPKvalidator
         private void otwóżToolStripMenuItem_Click(object sender, EventArgs e)
         {
             OpenFile();
+        }
+
+        private void btnDodaj_Click(object sender, EventArgs e)
+        {
+            OpenFile();
+        }
+          
+
+        private void btnUsun_Click(object sender, EventArgs e)
+        {
+
+            for (int i = 0; i < listJPK.Items.Count; i++)
+            {
+                if (listJPK.Items[i].Checked)
+                {
+                   // MessageBox.Show("element "+i.ToString()+" jest zaznaczony");
+                    listaJPK.RemoveAt(i);
+                    listVievFill(listaJPK);
+                }
+            }
+            
         }
     }
 }

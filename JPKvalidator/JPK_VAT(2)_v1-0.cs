@@ -31,6 +31,8 @@ namespace JPKvalidator
 
         private JPKZakupCtrl zakupCtrlField;
 
+        
+
         public JPK()
         {
             this.zakupCtrlField = new JPKZakupCtrl();
@@ -39,6 +41,7 @@ namespace JPKvalidator
             this.sprzedazWierszField = new List<JPKSprzedazWiersz>();
             this.podmiot1Field = new JPKPodmiot1();
             this.naglowekField = new TNaglowek();
+            
         }
 
         public TNaglowek Naglowek
@@ -112,6 +115,8 @@ namespace JPKvalidator
                 this.zakupCtrlField = value;
             }
         }
+
+        
     }
 
     public partial class TNaglowek
@@ -4608,6 +4613,7 @@ namespace JPKvalidator
             JPKSprzedazWiersz sprzedazwiersz = new JPKSprzedazWiersz();
             CultureInfo culture = new CultureInfo("en-US");
             sprzedazwiersz.LpSprzedazy = lpSprzedazy;
+            sprzedazwiersz.NrKontrahenta = nrKontrahenta;
             sprzedazwiersz.NazwaKontrahenta = nazwaKontrahenta;
             sprzedazwiersz.AdresKontrahenta = adresKontrahenta;
             sprzedazwiersz.DowodSprzedazy = dowodSprzedazy;
