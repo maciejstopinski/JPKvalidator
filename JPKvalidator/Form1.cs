@@ -21,7 +21,7 @@ namespace JPKvalidator
         private List<JPK> listaJPK= new List<JPK>();
         private JPK jpkItem;
         private ListViewItem jpkListViewItem;
-       
+
         private void OpenFile()
         {
             OpenFileDialog openMyFile = new OpenFileDialog();
@@ -30,20 +30,24 @@ namespace JPKvalidator
             openMyFile.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*|xml files (*.xml)|*.xml";
             openMyFile.FilterIndex = 2;
             openMyFile.RestoreDirectory = true;
+            openMyFile.Multiselect = true;
+
 
             if (openMyFile.ShowDialog() == DialogResult.OK)
             {
-                string fileName = openMyFile.FileName;
-                try
+                //string fileName = openMyFile.FileName;
+                foreach (string fileName in openMyFile.FileNames)
                 {
-                   ReadXML(fileName);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error: Could not read file from disk. Original error: " + ex.Message);
+                    try
+                    {
+                        ReadXML(fileName);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error: Could not read file from disk. Original error: " + ex.Message);
+                    }
                 }
             }
-           
         }
         
         private void ReadXML(string fileName)
@@ -553,8 +557,10 @@ namespace JPKvalidator
                 {
                     zaznaczenie.Add(i);                   
                 }
-                zaznaczenie.Reverse();
+               
             }
+            zaznaczenie.Sort();
+            zaznaczenie.Reverse();
             for (int nr=0;nr< zaznaczenie.Count; nr++)
             {
                 listaJPK.RemoveAt(zaznaczenie[nr]);
