@@ -34,6 +34,8 @@
             this.otwóżToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.zamknijToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnUsun = new System.Windows.Forms.Button();
+            this.btnDodaj = new System.Windows.Forms.Button();
             this.listJPK = new System.Windows.Forms.ListView();
             this.column1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.column2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -51,8 +53,7 @@
             this.column14 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.column15 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.column16 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.btnDodaj = new System.Windows.Forms.Button();
-            this.btnUsun = new System.Windows.Forms.Button();
+            this.btnShowSprzedaz = new System.Windows.Forms.Button();
             this.menuStripMainMenu.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -92,6 +93,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnShowSprzedaz);
             this.panel1.Controls.Add(this.btnUsun);
             this.panel1.Controls.Add(this.btnDodaj);
             this.panel1.Controls.Add(this.listJPK);
@@ -100,6 +102,26 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1250, 144);
             this.panel1.TabIndex = 3;
+            // 
+            // btnUsun
+            // 
+            this.btnUsun.Location = new System.Drawing.Point(106, 113);
+            this.btnUsun.Name = "btnUsun";
+            this.btnUsun.Size = new System.Drawing.Size(94, 23);
+            this.btnUsun.TabIndex = 2;
+            this.btnUsun.Text = "Usuń plik JPK";
+            this.btnUsun.UseVisualStyleBackColor = true;
+            this.btnUsun.Click += new System.EventHandler(this.btnUsun_Click);
+            // 
+            // btnDodaj
+            // 
+            this.btnDodaj.Location = new System.Drawing.Point(6, 113);
+            this.btnDodaj.Name = "btnDodaj";
+            this.btnDodaj.Size = new System.Drawing.Size(94, 23);
+            this.btnDodaj.TabIndex = 1;
+            this.btnDodaj.Text = "Dodaj plik JPK";
+            this.btnDodaj.UseVisualStyleBackColor = true;
+            this.btnDodaj.Click += new System.EventHandler(this.btnDodaj_Click);
             // 
             // listJPK
             // 
@@ -208,25 +230,14 @@
             // 
             this.column16.Text = "Waluta";
             // 
-            // btnDodaj
+            // btnShowSprzedaz
             // 
-            this.btnDodaj.Location = new System.Drawing.Point(6, 113);
-            this.btnDodaj.Name = "btnDodaj";
-            this.btnDodaj.Size = new System.Drawing.Size(94, 23);
-            this.btnDodaj.TabIndex = 1;
-            this.btnDodaj.Text = "Dodaj plik JPK";
-            this.btnDodaj.UseVisualStyleBackColor = true;
-            this.btnDodaj.Click += new System.EventHandler(this.btnDodaj_Click);
-            // 
-            // btnUsun
-            // 
-            this.btnUsun.Location = new System.Drawing.Point(106, 113);
-            this.btnUsun.Name = "btnUsun";
-            this.btnUsun.Size = new System.Drawing.Size(94, 23);
-            this.btnUsun.TabIndex = 2;
-            this.btnUsun.Text = "Usuń plik JPK";
-            this.btnUsun.UseVisualStyleBackColor = true;
-            this.btnUsun.Click += new System.EventHandler(this.btnUsun_Click);
+            this.btnShowSprzedaz.Location = new System.Drawing.Point(251, 113);
+            this.btnShowSprzedaz.Name = "btnShowSprzedaz";
+            this.btnShowSprzedaz.Size = new System.Drawing.Size(94, 23);
+            this.btnShowSprzedaz.TabIndex = 3;
+            this.btnShowSprzedaz.Text = "Pokaż sprzedaż";
+            this.btnShowSprzedaz.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -274,6 +285,7 @@
         private System.Windows.Forms.ColumnHeader column16;
         private System.Windows.Forms.Button btnDodaj;
         private System.Windows.Forms.Button btnUsun;
+        private System.Windows.Forms.Button btnShowSprzedaz;
     }
 }
 

@@ -544,17 +544,22 @@ namespace JPKvalidator
 
         private void btnUsun_Click(object sender, EventArgs e)
         {
+             List<int> zaznaczenie=new List<int>();
+
 
             for (int i = 0; i < listJPK.Items.Count; i++)
             {
                 if (listJPK.Items[i].Checked)
                 {
-                   // MessageBox.Show("element "+i.ToString()+" jest zaznaczony");
-                    listaJPK.RemoveAt(i);
-                    listVievFill(listaJPK);
+                    zaznaczenie.Add(i);                   
                 }
+                zaznaczenie.Reverse();
             }
-            
+            for (int nr=0;nr< zaznaczenie.Count; nr++)
+            {
+                listaJPK.RemoveAt(zaznaczenie[nr]);
+            }
+            listVievFill(listaJPK);
         }
     }
 }
