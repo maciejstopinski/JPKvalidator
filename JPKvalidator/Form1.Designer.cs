@@ -34,6 +34,7 @@
             this.otwóżToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.zamknijToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnShowSprzedaz = new System.Windows.Forms.Button();
             this.btnUsun = new System.Windows.Forms.Button();
             this.btnDodaj = new System.Windows.Forms.Button();
             this.listJPK = new System.Windows.Forms.ListView();
@@ -53,7 +54,6 @@
             this.column14 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.column15 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.column16 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.btnShowSprzedaz = new System.Windows.Forms.Button();
             this.menuStripMainMenu.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -102,6 +102,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1250, 144);
             this.panel1.TabIndex = 3;
+            // 
+            // btnShowSprzedaz
+            // 
+            this.btnShowSprzedaz.Location = new System.Drawing.Point(251, 113);
+            this.btnShowSprzedaz.Name = "btnShowSprzedaz";
+            this.btnShowSprzedaz.Size = new System.Drawing.Size(94, 23);
+            this.btnShowSprzedaz.TabIndex = 3;
+            this.btnShowSprzedaz.Text = "Pokaż sprzedaż";
+            this.btnShowSprzedaz.UseVisualStyleBackColor = true;
+            this.btnShowSprzedaz.Click += new System.EventHandler(this.btnShowSprzedaz_Click);
             // 
             // btnUsun
             // 
@@ -229,15 +239,6 @@
             // column16
             // 
             this.column16.Text = "Waluta";
-            // 
-            // btnShowSprzedaz
-            // 
-            this.btnShowSprzedaz.Location = new System.Drawing.Point(251, 113);
-            this.btnShowSprzedaz.Name = "btnShowSprzedaz";
-            this.btnShowSprzedaz.Size = new System.Drawing.Size(94, 23);
-            this.btnShowSprzedaz.TabIndex = 3;
-            this.btnShowSprzedaz.Text = "Pokaż sprzedaż";
-            this.btnShowSprzedaz.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
