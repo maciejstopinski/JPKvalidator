@@ -61,6 +61,12 @@
     <Compile Include="SprzedazForm.Designer.cs">
       <DependentUpon>SprzedazForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ZakupyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ZakupyForm.Designer.cs">
+      <DependentUpon>ZakupyForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -75,6 +81,9 @@
     </Compile>
     <EmbeddedResource Include="SprzedazForm.resx">
       <DependentUpon>SprzedazForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ZakupyForm.resx">
+      <DependentUpon>ZakupyForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

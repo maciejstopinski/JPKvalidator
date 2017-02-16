@@ -287,7 +287,7 @@
             this.Name = "SprzedazForm";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
-            this.Text = "sprzedaż";
+            this.Text = "Sprzedaż";
             this.Load += new System.EventHandler(this.SprzedazForm_Load);
             this.ResumeLayout(false);
 

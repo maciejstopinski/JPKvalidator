@@ -54,6 +54,7 @@
             this.column14 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.column15 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.column16 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btnShowZakupy = new System.Windows.Forms.Button();
             this.menuStripMainMenu.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -93,6 +94,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnShowZakupy);
             this.panel1.Controls.Add(this.btnShowSprzedaz);
             this.panel1.Controls.Add(this.btnUsun);
             this.panel1.Controls.Add(this.btnDodaj);
@@ -240,6 +242,16 @@
             // 
             this.column16.Text = "Waluta";
             // 
+            // btnShowZakupy
+            // 
+            this.btnShowZakupy.Location = new System.Drawing.Point(369, 114);
+            this.btnShowZakupy.Name = "btnShowZakupy";
+            this.btnShowZakupy.Size = new System.Drawing.Size(94, 23);
+            this.btnShowZakupy.TabIndex = 4;
+            this.btnShowZakupy.Text = "Pokaż zakupy";
+            this.btnShowZakupy.UseVisualStyleBackColor = true;
+            this.btnShowZakupy.Click += new System.EventHandler(this.btnShowZakupy_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -287,6 +299,7 @@
         private System.Windows.Forms.Button btnDodaj;
         private System.Windows.Forms.Button btnUsun;
         private System.Windows.Forms.Button btnShowSprzedaz;
+        private System.Windows.Forms.Button btnShowZakupy;
     }
 }
 

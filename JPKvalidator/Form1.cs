@@ -604,5 +604,42 @@ namespace JPKvalidator
             }
 
         }
+
+        private void btnShowZakupy_Click(object sender, EventArgs e)
+        {
+            List<JPKZakupWiersz> listaZakupow = new List<JPKZakupWiersz>();
+            if (listaJPK.Count != 0)
+            {
+                List<int> zaznaczenie = new List<int>();
+
+
+                for (int i = 0; i < listJPK.Items.Count; i++)
+                {
+                    if (listJPK.Items[i].Checked)
+                    {
+                        zaznaczenie.Add(i);
+                    }
+
+                }
+                zaznaczenie.Sort();
+                zaznaczenie.Reverse();
+                for (int nr = 0; nr < zaznaczenie.Count; nr++)
+                {
+                    foreach (var item in listaJPK[nr].ZakupWiersz)
+                    {
+                        listaZakupow.Add(item);
+                    }
+                }
+
+                ZakupyForm sprzedaz = new ZakupyForm(listaZakupow);
+                sprzedaz.MdiParent = this;
+                sprzedaz.Show();
+
+            }
+            else
+            {
+                MessageBox.Show("Nie wczytano pliku JPK");
+            }
+        }
     }
 }
