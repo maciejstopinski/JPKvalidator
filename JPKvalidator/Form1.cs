@@ -530,6 +530,42 @@ namespace JPKvalidator
                
             }
         }
+        private List<JPK> ReturnZaznaczenie()
+        {
+            List<JPK> zaznaczoneJPK = new List<JPK>();
+            if (listaJPK.Count != 0)
+            {
+                List<int> zaznaczenie = new List<int>();
+
+
+                for (int i = 0; i < listJPK.Items.Count; i++)
+                {
+                    if (listJPK.Items[i].Checked)
+                    {
+                        zaznaczenie.Add(i);
+                    }
+
+                }
+                zaznaczenie.Sort();
+                //zaznaczenie.Reverse();
+                for (int nr = 0; nr < zaznaczenie.Count; nr++)
+                {
+                    //foreach (var item in listaJPK[nr].ZakupWiersz)
+                    //{
+                    //    listaZakupow.Add(item);
+                    //}
+                    zaznaczoneJPK.Add(  listaJPK[zaznaczenie[nr]]);
+                }
+
+
+
+            }
+            else
+            {
+                MessageBox.Show("Nie wczytano pliku JPK");
+            }
+            return zaznaczoneJPK;
+        }
         private void zamknijToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -631,15 +667,23 @@ namespace JPKvalidator
                     }
                 }
 
-                ZakupyForm sprzedaz = new ZakupyForm(listaZakupow);
-                sprzedaz.MdiParent = this;
-                sprzedaz.Show();
+                ZakupyForm zakupy = new ZakupyForm(listaZakupow);
+                zakupy.MdiParent = this;
+                zakupy.Show();
 
             }
             else
             {
                 MessageBox.Show("Nie wczytano pliku JPK");
             }
+        }
+
+        private void btnShowDekl_Click(object sender, EventArgs e)
+        {
+            
+            DeklaracjaForm deklaracja = new DeklaracjaForm(ReturnZaznaczenie());
+            deklaracja.MdiParent = this;
+            deklaracja.Show();
         }
     }
 }

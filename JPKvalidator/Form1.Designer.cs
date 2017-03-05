@@ -34,6 +34,7 @@
             this.otwóżToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.zamknijToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnShowZakupy = new System.Windows.Forms.Button();
             this.btnShowSprzedaz = new System.Windows.Forms.Button();
             this.btnUsun = new System.Windows.Forms.Button();
             this.btnDodaj = new System.Windows.Forms.Button();
@@ -54,7 +55,7 @@
             this.column14 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.column15 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.column16 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.btnShowZakupy = new System.Windows.Forms.Button();
+            this.btnShowDekl = new System.Windows.Forms.Button();
             this.menuStripMainMenu.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -94,6 +95,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnShowDekl);
             this.panel1.Controls.Add(this.btnShowZakupy);
             this.panel1.Controls.Add(this.btnShowSprzedaz);
             this.panel1.Controls.Add(this.btnUsun);
@@ -104,6 +106,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1250, 144);
             this.panel1.TabIndex = 3;
+            // 
+            // btnShowZakupy
+            // 
+            this.btnShowZakupy.Location = new System.Drawing.Point(369, 114);
+            this.btnShowZakupy.Name = "btnShowZakupy";
+            this.btnShowZakupy.Size = new System.Drawing.Size(94, 23);
+            this.btnShowZakupy.TabIndex = 4;
+            this.btnShowZakupy.Text = "Pokaż zakupy";
+            this.btnShowZakupy.UseVisualStyleBackColor = true;
+            this.btnShowZakupy.Click += new System.EventHandler(this.btnShowZakupy_Click);
             // 
             // btnShowSprzedaz
             // 
@@ -242,15 +254,15 @@
             // 
             this.column16.Text = "Waluta";
             // 
-            // btnShowZakupy
+            // btnShowDekl
             // 
-            this.btnShowZakupy.Location = new System.Drawing.Point(369, 114);
-            this.btnShowZakupy.Name = "btnShowZakupy";
-            this.btnShowZakupy.Size = new System.Drawing.Size(94, 23);
-            this.btnShowZakupy.TabIndex = 4;
-            this.btnShowZakupy.Text = "Pokaż zakupy";
-            this.btnShowZakupy.UseVisualStyleBackColor = true;
-            this.btnShowZakupy.Click += new System.EventHandler(this.btnShowZakupy_Click);
+            this.btnShowDekl.Location = new System.Drawing.Point(559, 113);
+            this.btnShowDekl.Name = "btnShowDekl";
+            this.btnShowDekl.Size = new System.Drawing.Size(100, 23);
+            this.btnShowDekl.TabIndex = 5;
+            this.btnShowDekl.Text = "Pokaż deklaracje";
+            this.btnShowDekl.UseVisualStyleBackColor = true;
+            this.btnShowDekl.Click += new System.EventHandler(this.btnShowDekl_Click);
             // 
             // Form1
             // 
@@ -300,6 +312,7 @@
         private System.Windows.Forms.Button btnUsun;
         private System.Windows.Forms.Button btnShowSprzedaz;
         private System.Windows.Forms.Button btnShowZakupy;
+        private System.Windows.Forms.Button btnShowDekl;
     }
 }
 
